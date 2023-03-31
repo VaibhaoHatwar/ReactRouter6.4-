@@ -1,5 +1,27 @@
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom"
+
+// pages
+import AboutPage from "./pages/About"
+import HomePage from "./pages/Home"
+
 function App() {
-  return <div className="App">Hello, World!</div>
+  return (
+    <BrowserRouter>
+      <header>
+        <nav>
+          <h1>ReactRouter6.4+</h1>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+        </nav>
+      </header>
+      <main>
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="about" element={<AboutPage />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  )
 }
 
 export default App
